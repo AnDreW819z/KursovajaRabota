@@ -1,12 +1,17 @@
 using System.ComponentModel.DataAnnotations;
-
-namespace Kurs.Models;
-
-public class Article
+using System.ComponentModel.DataAnnotations.Schema;
+namespace Kurs.Models
 {
-    public int Id { get; set; }
-    public string? Title { get; set; }
-    public string? Categoru { get; set; }
-    public string? Text { get; set; }
- 
+
+    public class Article
+    {
+        public int Id { get; set; }
+        [Display(Name = "Название" )]
+        public string? Title { get; set; }
+        [Display(Name = "Категория")]
+        public string? Categoru { get; set; }
+        
+        public string? Text { get; set; }
+
+    }
 }
