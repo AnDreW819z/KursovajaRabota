@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Kurs.Models;
 
-public class Articlea
+public class Article
 {
     public int Id { get; set; }
     public string? Title { get; set; }
