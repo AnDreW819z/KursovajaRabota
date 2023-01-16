@@ -10,6 +10,15 @@
 <p>
     <a asp-page="Create">Создать</a>
 </p>
+<form>
+    <p>
+        <select asp-for="ArticleCategory" asp-items="Model.Categores">
+            <option value="">Все</option>
+        </select>
+        Название: <input type="text" asp-for="SearchString" />
+        <input type="submit" value="Найти" />
+    </p>
+</form>
 <table class="table">
     <thead>
         <tr>
