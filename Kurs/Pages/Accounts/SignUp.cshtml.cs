@@ -28,7 +28,7 @@ namespace Kurs.Pages.Accounts
             account.Password = BCrypt.Net.BCrypt.HashPassword(account.Password);
             db.Accounts.Add(account);
             db.SaveChanges();
-            return RedirectToPage("./Index");
+            return RedirectToPage("./SignIn");
         }
         //private readonly Kurs.Data.KursContext _context;
 
