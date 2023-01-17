@@ -7,9 +7,6 @@
 
 <h1>Доступная информация</h1>
 
-<p>
-    <a asp-page="Create">Создать</a>
-</p>
 <form>
     <p>
         <select asp-for="ArticleCategory" asp-items="Model.Categores">
@@ -41,9 +38,7 @@
                 @Html.DisplayFor(modelItem => item.Categoru)
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.Id">Изменить</a> |
                 <a asp-page="./Details" asp-route-id="@item.Id">Читать</a> |
-                <a asp-page="./Delete" asp-route-id="@item.Id">Удалить</a>
             </td>
         </tr>
 }

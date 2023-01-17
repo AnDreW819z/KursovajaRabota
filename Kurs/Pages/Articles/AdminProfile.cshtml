@@ -1,0 +1,59 @@
+﻿@page
+@model Kurs.Pages.Articles.IndexModel
+@using Kurs.Models
+@using Kurs.Pages.Articles
+@using static Kurs.Pages.Articles.IndexModel
+@using static Kurs.Pages.Articles.CreateModel
+@{
+}
+<html>
+    <head>
+
+    </head>
+    <body>
+    <h3>Кабинет администратора</h3>
+    <p>
+        <a asp-page="Create">Создать новую</a>
+    </p>
+    <form>
+<p>
+        <select asp-for="ArticleCategory" asp-items="Model.Categores">
+            <option value="">Все</option>
+        </select>
+        Название: <input type="text" asp-for="SearchString" />
+        <input type="submit" value="Найти" />
+    </p>
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                    @Html.DisplayNameFor(model => model.Article[0].Title)
+            </th>
+            <th>
+                    @Html.DisplayNameFor(model => model.Article[0].Categoru)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+            @foreach (var item in Model.Article)
+            {
+            <tr>
+                <td>
+                        @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                        @Html.DisplayFor(modelItem => item.Categoru)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.Id">Изменить</a> |
+                    <a asp-page="./Details" asp-route-id="@item.Id">Читать</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.Id">Удалить</a>
+                </td>
+            </tr>
+            }
+    </tbody>
+</table>
+    </body>
+</html>

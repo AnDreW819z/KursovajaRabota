@@ -39,7 +39,7 @@ namespace Kurs.Pages
                 HttpContext.Session.SetString("username", acc.UserName);
                 if (acc.UserName == "admin")
                 {
-                    return RedirectToPage("./Articles/Create");
+                    return RedirectToPage("./Articles/AdminProfile");
                 }
                 return RedirectToPage("./Privacy");
             }

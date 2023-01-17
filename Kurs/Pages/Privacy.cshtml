@@ -1,9 +1,9 @@
 ﻿@page
 @model PrivacyModel
 @{
-    ViewData["Title"] = "Privacy Policy";
+    ViewData["Title"] = "Welcome";
 }
-<h1>@ViewData["Title"]</h1>
+@*<h1>@ViewData["Title"]</h1>*@
 
 <div class="text-center">
     <h1 class="display-4">Добро пожаловать @HttpContext.Session.GetString("username")</h1>
