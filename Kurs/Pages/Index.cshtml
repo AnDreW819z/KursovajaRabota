@@ -1,11 +1,39 @@
 ﻿@page
-@model IndexModel
+@model SignInModel
 
 @{
     ViewData["Title"] = "Главная";
 }
+<html>
+<head>
 
-<div class="text-center">
-    <h1 class="display-4">Добро пожаловать @HttpContext.Session.GetString("username")</h1>
-    <p>Данная Справочно-информационная система предоставляет авторизованным пользователям доступ к информации (статьи/законы/полезная информация) о программах уничтожения остаточной информации</a>.</p>
-</div>
+</head>
+<body>
+    <h3>Вход</h3>
+    <form method="post" asp-asp-page="Register">
+        <table>
+            <tr>
+                <td>Имя пользователя</td>
+                <td>
+                    <input asp-for="@Model.account.UserName" />
+                </td>
+            </tr>
+            <tr>
+                <td>Пароль</td>
+                <td>
+                    <input type="password" asp-for="@Model.account.Password" />
+                </td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>
+                    <input type="submit" value="Авторизоваться" />
+                    <input type="submit" value="Зарегистрироваться"</input>
+                </td>
+            </tr>
+        </table>
+
+    </form>
+</body>
+</html>
+
