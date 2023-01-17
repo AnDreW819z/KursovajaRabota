@@ -2,3 +2,41 @@
 @model Kurs.Pages.Accounts.ProfileModel
 @{
 }
+<html>
+<head>
+
+</head>
+<body>
+    <h3>Личный кабинет</h3>
+    <form method="post" asp-asp-page="profile">
+        <table>
+            <tr>
+                <td>Имя пользователя</td>
+                <td>
+                    <input asp-for="@Model.account.UserName" />
+                    <input type="hidden" asp-for="@Model.account.Id" />
+                </td>
+            </tr>
+            <tr>
+                <td>Полное имя</td>
+                <td>
+                    <input asp-for="@Model.account.FullName" />
+                </td>
+            </tr>
+            <tr>
+                <td>Пароль</td>
+                <td>
+                    <input type="password" asp-for="@Model.account.Password" />
+                </td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>
+                    <input type="submit" value="Сохранить" />
+                </td>
+            </tr>
+        </table>
+
+    </form>
+</body>
+</html>
