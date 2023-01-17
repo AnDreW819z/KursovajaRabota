@@ -13,7 +13,9 @@ namespace Kurs.Data
             : base(options)
         {
         }
-
+        
         public DbSet<Kurs.Models.Article> Article { get; set; } = default!;
+        public DbSet<Kurs.Models.Account> Accounts { get; set; } = default!;
+
     }
 }

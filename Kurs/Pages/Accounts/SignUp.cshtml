@@ -1,0 +1,81 @@
+﻿@page
+@model Kurs.Pages.Accounts.SignUpModel
+
+@{
+    ViewData["Title"] = "SignUp";
+}
+<html>
+<head>
+
+</head>
+<body>
+    <h3>Войти</h3>
+    <form method="post" asp-asp-page="SignUp">
+        <table>
+            <tr>
+                <td>Имя пользователя</td>
+                <td>
+                    <input asp-for="@Model.account.UserName" />
+                </td>
+            </tr>
+            <tr>
+                <td>Полное имя</td>
+                <td>
+                    <input asp-for="@Model.account.FullName" />
+                </td>
+            </tr>
+            <tr>
+                <td>Пароль</td>
+                <td>
+                    <input type="password" asp-for="@Model.account.Password" />
+                </td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>
+                    <input type="submit" value="Сохранить" />
+                    <a asp-asp-page="signin">Войти</a>
+                </td>
+            </tr>
+        </table>
+
+    </form>
+</body>
+</html>
+@*<h1>Create</h1>
+
+<h4>Account</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Account.UserName" class="control-label"></label>
+                <input asp-for="Account.UserName" class="form-control" />
+                <span asp-validation-for="Account.UserName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Account.FullName" class="control-label"></label>
+                <input asp-for="Account.FullName" class="form-control" />
+                <span asp-validation-for="Account.FullName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Account.Password" class="control-label"></label>
+                <input asp-for="Account.Password" class="form-control" />
+                <span asp-validation-for="Account.Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>*@
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

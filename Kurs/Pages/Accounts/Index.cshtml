@@ -1,0 +1,79 @@
+﻿@page
+@model Kurs.Pages.Accounts.SignInModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<html>
+<head>
+
+</head>
+<body>
+    <h3>Зарегистрироваться</h3>
+    <form method="post" asp-asp-page="Register">
+        <table>
+            <tr>
+                <td>Имя пользователя</td>
+                <td>
+                    <input asp-for="@Model.account.UserName" />
+                </td>
+            </tr>
+            <tr>
+                <td>Пароль</td>
+                <td>
+                    <input type="password" asp-for="@Model.account.Password" />
+                </td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>
+                    <input type="submit" value="Авторизоваться" />
+                    <a asp-asp-page="signup">Зарегистрироваться</a>
+                </td>
+            </tr>
+        </table>
+
+    </form>
+</body>
+</html>
+
+@*<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Account[0].UserName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Account[0].FullName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Account[0].Password)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Account) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Password)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>*@
