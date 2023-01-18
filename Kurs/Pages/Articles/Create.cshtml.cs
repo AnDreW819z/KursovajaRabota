@@ -7,11 +7,15 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Kurs.Data;
 using Kurs.Models;
+using System.ComponentModel.DataAnnotations;
 
 namespace Kurs.Pages.Articles
 {
     public class CreateModel : PageModel
     {
+        [MinLength(5)]
+        [MaxLength(1024)]
+        public string Description { get; set; }
         private readonly Kurs.Data.KursContext _context;
 
         public CreateModel(Kurs.Data.KursContext context)

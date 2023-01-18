@@ -9,7 +9,8 @@
 
 <hr />
 <div class="row">
-    <div class="col-md-4">
+    <script src="~/js/ckeditor/ckeditor.js"></script>
+    <div class="col">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
@@ -24,12 +25,17 @@
             </div>
             <div class="form-group">
                 <label asp-for="Article.Text" class="control-label"></label>
-                <input asp-for="Article.Text" class="form-control" />
+                @*<input type="text" width="600" asp-for="Article.Text" class="form-control" />*@
+                <textarea asp-for="Article.Text" id="content"></textarea>
                 <span asp-validation-for="Article.Text" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Отправить" class="btn btn-primary" />
             </div>
+            @*<div>
+                <input asp-for="Article.Text" class=" = form-control" id="content" name="content"></>
+            </div>*@
+            
         </form>
     </div>
 </div>
@@ -37,7 +43,12 @@
 <div>
     <a asp-page="Index">Вернуться к списку статей</a>
 </div>
-
+<script>
+    document.addEventListener("DOMContentLoaded", function (event) {
+            var editor = CKEDITOR.replace('content');
+        });
+</script>
 @section Scripts {
+        
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
